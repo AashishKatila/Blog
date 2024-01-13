@@ -22,7 +22,7 @@ const App = () => {
     <Router>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/createpost">Createpost</Link>
+        <Link to="/createpost">Create Post</Link>
         {!isAuth ? (
           <Link to="/login">Login</Link>
         ) : (
