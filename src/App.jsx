@@ -19,6 +19,7 @@ const App = () => {
   }
 
   return (
+    <div className="App">
     <Router>
       <nav>
         <Link to="/">Home</Link>
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
     </Router>
+    </div>
   );
 };
 
