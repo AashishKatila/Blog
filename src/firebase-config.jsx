@@ -15,6 +15,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+//To get reference to Firebase Firestore database instance used for storing and retrieving data.
 export const db = getFirestore(app)
+
+//To get a reference to Firebase Authentication instance, used for managing user authentication.
 export const auth = getAuth(app);
+
+//To create an instance of the GoogleAuthProvider class, used for enabling Google sign-in within your application.
 export const provider = new GoogleAuthProvider();

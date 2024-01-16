@@ -4,14 +4,21 @@ import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({setIsAuth}) => {
-  const navigate = useNavigate()
+
+  const navigate = useNavigate()//For navigation 
+
+  // To sign in using Google
   const signInWithGoogle = () =>{
+
+    // Lets user signin in a popup window (used for ease), 
+    // takes instance of Firebase Authentication and GoogleAuthProvider class
     signInWithPopup(auth,provider).then((result) =>{
       localStorage.setItem("isAuth",true)
       setIsAuth(true)
       navigate('/')
     })
   }
+
   return (
     <div className='loginPage'>
       <p>Sign In With Google </p>

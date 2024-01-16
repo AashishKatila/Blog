@@ -8,8 +8,10 @@ import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 
 const App = () => {
+  // To see if the user is logged in/authenticated or not
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
+  //To logout
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear();
@@ -20,6 +22,7 @@ const App = () => {
 
   return (
     <Router>
+      {/* Navbar */}
       <nav>
         <Link to="/">Home</Link>
 
@@ -32,6 +35,8 @@ const App = () => {
           </>
         )}
       </nav>
+
+      {/* Routes */}
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
